@@ -1,0 +1,56 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+        xmlns="sap.m" xmlns:f="sap.f" 
+    xmlns:tnt="sap.tnt" 
+    xmlns:l="sap.ui.layout"
+	xmlns:u="sap.ui.unified"
+    xmlns:dnd="sap.ui.core.dnd"
+        controllerName="ns.intern-app.controller.main" 
+        displayBlock="true"
+        class="side-navigation-demo"
+            xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+                <tnt:ToolHeader>
+        <Button icon="sap-icon://menu2"
+        press=".onCollapseExpandPress" />
+        <Text text="intern-app" wrapping="false" />
+        <ToolbarSpacer />
+        <Button icon="sap-icon://search" type="Transparent" />
+        
+    </tnt:ToolHeader>
+
+    <SplitApp
+        id="SplitAppDemo"
+        initialDetail="detail"
+        initialMaster="master"
+        orientationChange=".onOrientationChange">
+        <detailPages>
+            <Page
+                id="detail"
+                title="Details"
+                backgroundDesign= "Solid"
+                class="sapUiStdPage"
+                showNavButton="true"
+                navButtonPress=".onPressDetailBack">
+                <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" 
+                header="Header" subheader="SubHeader" press="">
+                    <TileContent unit="Unit" footer="Footer Text">
+                        <NumericContent value="A" withMargin="true" />
+                    </TileContent>
+                </GenericTile>
+            </Page>
+        </detailPages>
+
+        <masterPages>
+            <Page
+                id="master"
+                title="Menu"
+                backgroundDesign= "List"
+                icon="sap-icon://action"
+                class="sapUiStdPage">
+                <List >
+                    <StandardListItem title="Home" type="Active" press=".onPressNavToDetail2" />
+                </List>
+            </Page>
+            
+        </masterPages>
+     </SplitApp>
+</mvc:View>

@@ -1,0 +1,34 @@
+{
+  "namespace": "my.bookshop",
+  "definitions": {
+    "AttributeService": {
+      "@source": "srv/atr-service.cds",
+      "kind": "service",
+      "@path": "/attribute-import"
+    },
+    "my.bookshop.Books": {
+      "kind": "entity",
+      "@cds.persistence.name": "MY_BOOKSHOP_BOOKS",
+      "elements": {
+        "ID": {
+          "@cds.persistence.name": "ID",
+          "key": true,
+          "type": "cds.Integer"
+        },
+        "title": {
+          "@cds.persistence.name": "TITLE",
+          "type": "cds.String"
+        },
+        "stock": {
+          "@cds.persistence.name": "STOCK",
+          "type": "cds.Integer"
+        }
+      }
+    }
+  },
+  "meta": {
+    "creator": "CDS Compiler v1.26.2"
+  },
+  "$version": "1.0",
+  "@sql_mapping": "plain"
+}
